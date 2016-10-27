@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Donald Trump elected president</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7493.947265625, 5402.958984375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Hillary drops out</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7266.857421875, 5270.84814453125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Trump releases tax documents</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7494.31103515625, 5260.22265625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>FBI arrests Hillary</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7373.17822265625, 5167.65625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>World War III</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7793.11962890625, 5276.12451171875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Hillary releases emails</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7496.33349609375, 5047.041015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>North Korea attacks US</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7712.1923828125, 5188.88134765625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>ISIS attacks England</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7888.65234375, 5190.81005859375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Hillary develops pneumonia</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7157.74365234375, 5164.7744140625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>North Korea amasses ICBMs</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7711.888671875, 5088.6142578125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Trump tweets more sexist/racist comments</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7164.34765625, 5336.95751953125)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Donald Trump elected president</FOR>
+	<GIVEN>Hillary drops out</GIVEN>
+	<GIVEN>Trump releases tax documents</GIVEN>
+	<GIVEN>World War III</GIVEN>
+	<GIVEN>Trump tweets more sexist/racist comments</GIVEN>
+	<TABLE>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.6 0.4 0.7 0.3 0.05 0.95 0.1 0.9 0.8 0.2 0.9 0.1 0.35 0.65 0.4 0.6</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Hillary drops out</FOR>
+	<GIVEN>FBI arrests Hillary</GIVEN>
+	<GIVEN>Hillary develops pneumonia</GIVEN>
+	<TABLE>1.0 0.0 1.0 0.0 0.85 0.15 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Trump releases tax documents</FOR>
+	<GIVEN>Hillary releases emails</GIVEN>
+	<TABLE>0.9 0.1 0.0 1.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>FBI arrests Hillary</FOR>
+	<GIVEN>Hillary releases emails</GIVEN>
+	<TABLE>0.85 0.15 0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>World War III</FOR>
+	<GIVEN>North Korea attacks US</GIVEN>
+	<GIVEN>ISIS attacks England</GIVEN>
+	<TABLE>0.8 0.2 0.3 0.7 0.2 0.8 0.001 0.999</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Hillary releases emails</FOR>
+	<TABLE>0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>North Korea attacks US</FOR>
+	<GIVEN>North Korea amasses ICBMs</GIVEN>
+	<TABLE>0.2 0.8 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>ISIS attacks England</FOR>
+	<TABLE>0.25 0.75</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Hillary develops pneumonia</FOR>
+	<TABLE>0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>North Korea amasses ICBMs</FOR>
+	<TABLE>0.3 0.7</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Trump tweets more sexist/racist comments</FOR>
+	<TABLE>0.99 0.01</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
