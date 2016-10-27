@@ -101,6 +101,7 @@ Puzzle PuzzleGenerator::SimulatedAnnealing(double timelimit)
 	{
 		// Generate a successor of p by randomly changing the value of a random cell
 		Puzzle successor = p.GetRandomSuccessor();	
+		// At lower temperatures, make three more changes (for fun)
 		if(temperature < 0.1)
 		{
 			successor = p.GetRandomSuccessor();
@@ -122,8 +123,7 @@ Puzzle PuzzleGenerator::SimulatedAnnealing(double timelimit)
 			{
 				double random = (static_cast<double>(rand()) / static_cast<double>(RAND_MAX));
 				double prob = CalculateProbability(bestPuzzle.GetValue(), successor.GetValue()) -1;
-				
-				// Jump sometimes based 
+				// Jump sometimes based on this probability
 				if(random > prob)
 				{
 					p = successor;
