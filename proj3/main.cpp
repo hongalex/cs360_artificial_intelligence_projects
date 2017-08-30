@@ -8,17 +8,20 @@ using namespace std;
 void Simulate(PartiallyKnownGrid* grid)
 {
 	// Use "GridPathPlanner planner(grid, true)" to test your Adaptive A* implementation.
-	GridPathPlanner planner(grid);
+	GridPathPlanner planner(grid,true);
 
 	// Start simulation
 	int steps = 0;
-    int waitCounter = 100; // amount to wait between steps (milliseconds)
-	grid->Reset();
-    grid->DrawGrid();
+    int waitCounter = 10; // amount to wait between steps (milliseconds)
+	//grid->Reset();
+    //grid->DrawGrid();
 
     while (!grid->GoalReached()) {  // loop until your robot find the target or dies
         xyLoc move_to = planner.GetNextMove(grid);
-		
+		if(steps == 0 || steps == 1)
+        {
+            cout << "Step " << steps << ": " << planner.GetNumExpansions() << " expansions" << endl;
+        }
         // Call the simulator to move your robot and count the steps
         bool valid_move = grid->MoveTo(move_to);
         if (!valid_move) {
@@ -26,7 +29,7 @@ void Simulate(PartiallyKnownGrid* grid)
         	return;
         }
 		steps++;
-        grid->DrawGrid();
+        //grid->DrawGrid();
 
         #if defined(_WIN32) || defined(_WIN64)
         Sleep(waitCounter);
@@ -42,6 +45,7 @@ void Simulate(PartiallyKnownGrid* grid)
         #endif
     }
 	cout<<"Target found in "<<steps<<" steps !!!"<<endl;
+    cout << "Average number of expansions: " << planner.GetTotalExpansions() << endl;
 }
 
 int main() {

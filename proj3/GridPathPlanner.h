@@ -19,7 +19,7 @@ struct NodeComparator {
 		}
 		else if(lhs->f == rhs->f)
 		{
-			if(lhs->g < rhs->g)
+			if(lhs->g > rhs->g)
 			{
 				return true;
 			}	
@@ -40,6 +40,7 @@ public:
 
 	xyLoc GetNextMove(PartiallyKnownGrid* grid);
 	int GetNumExpansions();
+	int GetTotalExpansions();
 
 private:
 	bool mAdaptiveAStar; 
@@ -51,7 +52,6 @@ private:
 
 	int mNumExpansions;
 	int mTotalExpansions;
-	int mRuns;
 };
 
 #endif
